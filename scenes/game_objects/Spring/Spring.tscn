@@ -4,8 +4,8 @@
 [ext_resource path="res://scenes/game_objects/Spring/tile_0326.png" type="Texture" id=2]
 [ext_resource path="res://scenes/game_objects/Spring/Spring.gd" type="Script" id=3]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 5.0
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6, 7 )
 
 [node name="Spring" type="Area2D"]
 collision_mask = 2
@@ -23,4 +23,5 @@ texture = ExtResource( 2 )
 position = Vector2( 0, -16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.82782e-07, -3 )
 shape = SubResource( 1 )
