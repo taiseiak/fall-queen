@@ -20,6 +20,7 @@ var monitoring: bool = true setget _set_monitoring
 
 func _ready():
 	collision_area.connect("body_exited", self, "_on_collision_area_body_exited")
+	collision_area.connect("body_entered", self, "_on_collision_area_body_entered")
 
 
 func push(level: float):
@@ -63,7 +64,7 @@ func push(level: float):
 	tween.tween_callback(self, "emit_signal", ["extended"])
 
 
-func _on_Area2D_body_entered(body):
+func _on_collision_area_body_entered(body):
 	if tween == null or not tween.is_running():
 		emit_signal("collided")
 		push(0.5)
