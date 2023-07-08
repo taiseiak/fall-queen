@@ -8,14 +8,30 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Spring",
+"language": "GDScript",
+"path": "res://scenes/game_objects/Spring/Spring.gd"
+} ]
+_global_script_class_icons={
+"Spring": ""
+}
+
 [application]
 
 config/name="fall_queen"
+run/main_scene="res://scenes/Main/Main.tscn"
 config/icon="res://icon.png"
 
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[layer_names]
+
+2d_physics/layer_1="Queen"
+2d_physics/layer_2="Environment"
 
 [physics]
 
