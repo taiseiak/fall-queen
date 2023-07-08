@@ -18,13 +18,12 @@ func _ready():
 
 func _physics_process(delta):
 	var horizontal = Input.get_action_strength("right") - Input.get_action_strength("left")
-	add_torque(120 * horizontal)
-	set_angular_velocity(min(PI/3, angular_velocity))
+	add_torque(80 * horizontal)
+	set_angular_velocity(min(PI/8, angular_velocity))
 
 
 func _on_spring_collided():
 	previous_velocity = linear_velocity.length()
-	print(previous_velocity / push_damp_factor)
 	spring.push(previous_velocity / push_damp_factor)
 	set_angular_velocity(0.0)
 

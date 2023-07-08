@@ -28,6 +28,10 @@ config/icon="res://icon.png"
 
 GameBodyEventBus="*res://scenes/autoloads/GameBodyEventBus.tscn"
 
+[debug]
+
+shapes/collision/shape_color=Color( 1, 1, 1, 0.419608 )
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

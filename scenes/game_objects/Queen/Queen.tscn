@@ -13,7 +13,6 @@ rough = true
 radius = 6.0
 
 [node name="Queen" type="RigidBody2D"]
-collision_layer = 0
 collision_mask = 2
 mass = 0.5
 physics_material_override = SubResource( 3 )
