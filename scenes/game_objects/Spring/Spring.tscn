@@ -7,25 +7,20 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 5.0
 
-[node name="Spring" type="Node2D"]
+[node name="Spring" type="Area2D"]
+collision_mask = 2
 script = ExtResource( 3 )
 
 [node name="SpringBodySprite" type="Sprite" parent="."]
-position = Vector2( 0, 16 )
 texture = ExtResource( 1 )
 offset = Vector2( 0, -8 )
 
 [node name="SpringBaseSprite" type="Sprite" parent="."]
-position = Vector2( 0, 16 )
-rotation = 3.14159
+rotation = -3.14159
 texture = ExtResource( 2 )
 
-[node name="Area2D" type="Area2D" parent="SpringBaseSprite"]
-rotation = 3.14159
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SpringBaseSprite/Area2D"]
-shape = SubResource( 1 )
-
 [node name="EndPosition" type="Position2D" parent="."]
+position = Vector2( 0, -16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
