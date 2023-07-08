@@ -19,5 +19,3 @@ tile_data = PoolIntArray( 65524, 0, 0, 65525, 0, 1, 65526, 0, 1, 65527, 0, 2, 8,
 
 [node name="Queen" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, -32 )
-collision_layer = 0
-collision_mask = 2

@@ -23,6 +23,7 @@ func _ready():
 	collision_area.connect("body_entered", self, "_on_collision_area_body_entered")
 
 
+
 func push(level: float):
 	var move_node_original_y_position
 	if move_node != null:
@@ -67,7 +68,6 @@ func push(level: float):
 func _on_collision_area_body_entered(body):
 	if tween == null or not tween.is_running():
 		emit_signal("collided")
-		push(0.5)
 
 
 func _set_monitoring(value):
