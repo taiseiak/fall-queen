@@ -15,6 +15,7 @@ onready var move_node = get_node(move_node_path) as Node2D
 
 var tween: SceneTreeTween
 var ready: bool = true
+var colliding: bool = false
 
 
 func _ready():
@@ -67,12 +68,14 @@ func push(level: float):
 
 
 func _on_collision_area_body_entered(body: Node):
+	colliding = true
 	if tween == null or not tween.is_running():
 		emit_signal("collided")
-		$SpringTimer.start()
+	$SpringTimer.start()
 
 
 func _on_collision_area_body_exited(body: Node):
+	colliding = false
 	ready = true
 	$SpringTimer.stop()
 
@@ -80,4 +83,5 @@ func _on_collision_area_body_exited(body: Node):
 func _on_spring_timer_timeout():
 	if self.get_overlapping_bodies().size() > 0:
 		ready = true
-		push(0.5)
+		push(0.3)
+		$SpringTimer.start()

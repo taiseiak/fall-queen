@@ -9,9 +9,9 @@ func _ready():
 	GameBodyEventBus.connect("queen_died", self, "_on_queen_died")
 
 
-func _on_body_entered(body: Node):
+func _on_body_entered(body: Node2D):
 	if not queen_died:
-		GameBodyEventBus.emit_signal("level_won")
+		GameBodyEventBus.emit_signal("level_won", Vector2(body.global_position.x, global_position.y))
 
 
 func _on_queen_died():

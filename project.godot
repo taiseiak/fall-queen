@@ -42,6 +42,11 @@ gdscript/warnings/unused_signal=false
 gdscript/warnings/return_value_discarded=false
 shapes/collision/shape_color=Color( 1, 1, 1, 0.419608 )
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

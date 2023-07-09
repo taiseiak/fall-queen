@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes/game_objects/Spring/Spring.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8.5, 7 )
+extents = Vector2( 8.5, 8.5 )
 
 [sub_resource type="Curve" id=3]
 _data = [ Vector2( 0, 0.616136 ), 0.0, 2.99251, 0, 1, Vector2( 0.128275, 1 ), 0.0992525, 0.0992525, 0, 0, Vector2( 1, 0 ), -3.06596, 0.0, 0, 0 ]
@@ -31,7 +31,7 @@ texture = ExtResource( 1 )
 position = Vector2( 0, -16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 2 )
+position = Vector2( 0, 3.5 )
 shape = SubResource( 1 )
 
 [node name="SpringTimer" type="Timer" parent="."]

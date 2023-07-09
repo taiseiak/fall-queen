@@ -1,6 +1,5 @@
 [gd_resource type="TileSet" load_steps=44 format=2]
 
-[ext_resource path="res://resources/tilesets/monochrome_tilemap_transparent_packed.png" type="Texture" id=1]
 [ext_resource path="res://resources/tilesets/fall_queen_tilemap.png" type="Texture" id=2]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -66,6 +65,8 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [sub_resource type="ConvexPolygonShape2D" id=21]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
+[sub_resource type="StreamTexture" id=42]
+
 [sub_resource type="ConvexPolygonShape2D" id=22]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
@@ -128,7 +129,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [resource]
 0/name = "monochrome_tilemap_transparent_packed.png 0"
-0/texture = ExtResource( 1 )
+0/texture = SubResource( 42 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 240, 208, 80, 64 )

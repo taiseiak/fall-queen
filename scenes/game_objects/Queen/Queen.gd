@@ -51,7 +51,7 @@ func _on_spring_extended():
 	$AnimationPlayer.play_backwards("compress")
 
 
-func _on_level_won():
+func _on_level_won(win_position):
 	self.dumb_mode = true
 	spring.enabled = false
 

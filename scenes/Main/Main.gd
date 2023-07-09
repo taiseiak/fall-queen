@@ -31,7 +31,7 @@ func set_paused(new_value):
 	get_tree().paused = paused
 
 
-func _on_level_won():
+func _on_level_won(win_position):
 	$UI/LevelWonUI.visible = true
 
 
