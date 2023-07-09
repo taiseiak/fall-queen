@@ -32,6 +32,7 @@ func set_paused(new_value):
 	paused = new_value
 	$UI/GameMenu.visible = paused
 	$UI/GameMenu.paused = paused
+	$UI/HUD.visible = not paused
 	get_tree().paused = paused
 
 
@@ -48,7 +49,8 @@ func _on_quit_game():
 
 
 func _on_start_game():
-	for child in $UI.get_children():
-		child.visible = false
+	var game_start_ui = get_node_or_null("UI/GameStartUI")
+	if game_start_ui != null:
+		game_start_ui.visible = false
 	$LevelManager.load_level("res://scenes/levels/Level.tscn")
 	$UI/GameStartUI.queue_free()

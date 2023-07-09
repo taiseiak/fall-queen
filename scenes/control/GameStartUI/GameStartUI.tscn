@@ -10,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -200.0
 rect_min_size = Vector2( 200, 200 )
+mouse_filter = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
 margin_right = 824.0
@@ -28,6 +29,7 @@ alignment = 1
 margin_right = 160.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 50, 40 )
+mouse_filter = 1
 
 [node name="TitleLabel" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/Panel"]
 anchor_left = 0.5

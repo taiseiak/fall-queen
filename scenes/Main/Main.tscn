@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/levels/GameStartLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/managers/LevelManager.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/control/GameMenu/GameMenu.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/control/GameStartUI/GameStartUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/control/TouchScreenButtons/TouchScreenButtons.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/control/HUD/HUD.tscn" type="PackedScene" id=8]
 
 [node name="Main" type="Node"]
 pause_mode = 2
@@ -23,6 +24,9 @@ world_node_path = NodePath("../World")
 pause_mode = 2
 mouse_filter = 1
 
+[node name="HUD" parent="UI" instance=ExtResource( 8 )]
+layer = 4
+
 [node name="LevelWonUI" parent="UI" instance=ExtResource( 4 )]
 visible = false
 
@@ -32,5 +36,5 @@ visible = false
 [node name="GameStartUI" parent="UI" instance=ExtResource( 6 )]
 layer = 3
 
-[node name="TouchScreenButtons" parent="." instance=ExtResource( 7 )]
+[node name="TouchScreenButtons" parent="UI" instance=ExtResource( 7 )]
 visible = false

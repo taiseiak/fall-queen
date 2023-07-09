@@ -1,17 +1,15 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://resources/pngs/d.png" type="Texture" id=1]
 [ext_resource path="res://resources/pngs/a_dark.png" type="Texture" id=2]
 [ext_resource path="res://resources/pngs/a.png" type="Texture" id=3]
 [ext_resource path="res://resources/pngs/d_dark.png" type="Texture" id=4]
-[ext_resource path="res://scenes/control/TouchScreenButtons/TouchScreenButtons.gd" type="Script" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 18.43
 
 [node name="TouchScreenButtons" type="CanvasLayer"]
 layer = 5
-script = ExtResource( 5 )
 
 [node name="AButton" type="TouchScreenButton" parent="."]
 position = Vector2( 216, 360 )
