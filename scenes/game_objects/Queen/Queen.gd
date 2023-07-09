@@ -11,6 +11,7 @@ onready var spring: Spring = $Spring
 var dumb_mode: bool = false setget set_dumb_mode
 var previous_velocity: float
 var stop_velocity = false
+var first_bounce = true
 
 
 func _ready():
@@ -18,10 +19,11 @@ func _ready():
 	$GameOverArea.connect("body_entered", self, "_on_game_over_area_body_entered")
 	spring.connect("collided", self, "_on_spring_collided")
 	spring.connect("extended", self, "_on_spring_extended")
+	first_bounce = true
 
 
 func _physics_process(delta):
-	if not dumb_mode:
+	if not dumb_mode and not first_bounce:
 		var horizontal = Input.get_action_strength("right") - Input.get_action_strength("left")
 		add_torque(80 * horizontal)
 	angular_velocity = clamp(angular_velocity, -PI/4, PI/4)
@@ -33,6 +35,8 @@ func set_dumb_mode(new_value: bool):
 
 
 func _on_spring_collided():
+	if first_bounce:
+		first_bounce = not first_bounce
 	previous_velocity = linear_velocity.length()
 	if push_power_override > 0:
 		spring.push(push_power_override)

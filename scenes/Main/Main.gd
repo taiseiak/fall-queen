@@ -15,6 +15,9 @@ func _ready():
 	$UI/GameMenu.visible = false
 	$World.pause_mode = Node.PAUSE_MODE_STOP
 	$UI/GameMenu.pause_mode = Node.PAUSE_MODE_PROCESS
+	if OS.get_name() == "HTML5":
+		if JavaScript.eval("matchMedia('(hover: none)').matches"):
+			$TouchScreenButtons.visible = true
 
 
 func _input(event):
