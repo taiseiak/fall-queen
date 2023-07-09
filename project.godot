@@ -34,6 +34,7 @@ config/icon="res://icon.png"
 
 GameBodyEventBus="*res://scenes/autoloads/GameBodyEventBus.tscn"
 UiEventBus="*res://scenes/autoloads/UIEventBus.tscn"
+AudioPlayer="*res://scenes/autoloads/AudioPlayer.tscn"
 
 [debug]
 

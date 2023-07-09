@@ -11,7 +11,9 @@ func _ready():
 
 func _on_body_entered(body: Node2D):
 	if not queen_died:
-		GameBodyEventBus.emit_signal("level_won", Vector2(body.global_position.x, global_position.y))
+		GameBodyEventBus.emit_signal("level_won",
+				Vector2(body.global_position.x, global_position.y))
+		AudioPlayer.play_level_win_sound()
 
 
 func _on_queen_died():

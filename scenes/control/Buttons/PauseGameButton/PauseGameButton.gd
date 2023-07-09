@@ -7,3 +7,4 @@ func _ready():
 
 func _on_pressed():
 	UiEventBus.emit_signal("toggle_pause")
+	AudioPlayer.play_button_sound()

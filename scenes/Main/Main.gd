@@ -23,8 +23,9 @@ func _input(event):
 
 
 func set_paused(new_value):
-	if has_node("World/GameStartLevel") != null:
-		$UI/GameStartUI.visible = paused
+	var game_start_ui = get_node_or_null("UI/GameStartUI")
+	if game_start_ui != null:
+		game_start_ui.visible = paused
 	paused = new_value
 	$UI/GameMenu.visible = paused
 	$UI/GameMenu.paused = paused
@@ -47,3 +48,4 @@ func _on_start_game():
 	for child in $UI.get_children():
 		child.visible = false
 	$LevelManager.load_level("res://scenes/levels/Level.tscn")
+	$UI/GameStartUI.queue_free()

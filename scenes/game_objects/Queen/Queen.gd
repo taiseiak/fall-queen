@@ -49,6 +49,7 @@ func _on_spring_extended():
 	else:
 		apply_central_impulse(direction_from_spring * max(50, spring_power * previous_velocity / push_damp_factor))
 	$AnimationPlayer.play_backwards("compress")
+	AudioPlayer.play_bounce_sound()
 
 
 func _on_level_won(win_position):

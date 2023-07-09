@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://resources/audio/mixkit-game-ball-tap-2073.wav" type="AudioStream" id=1]
+[ext_resource path="res://scenes/autoloads/AudioPlayer.gd" type="Script" id=2]
+[ext_resource path="res://resources/audio/raining-ambient-calm-piano-music-loop-111521.mp3" type="AudioStream" id=3]
+[ext_resource path="res://resources/audio/mixkit-small-hit-in-a-game-2072.wav" type="AudioStream" id=4]
+[ext_resource path="res://resources/audio/mixkit-video-game-health-recharge-2837.wav" type="AudioStream" id=5]
+
+[node name="AudioPlayer" type="Node"]
+pause_mode = 2
+script = ExtResource( 2 )
+
+[node name="Button" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -8.0
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -20.0
+autoplay = true
+
+[node name="Bounce" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -8.0
+pitch_scale = 1.8
+
+[node name="LevelWin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -15.0

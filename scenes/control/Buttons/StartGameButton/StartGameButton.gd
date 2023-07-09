@@ -7,3 +7,4 @@ func _ready():
 
 func _on_pressed():
 	UiEventBus.emit_signal("start_game")
+	AudioPlayer.play_button_sound()

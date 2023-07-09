@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/raining-ambient-calm-piano-music-loop-111521.mp3-7900e9d7349039138db73840754b8a54.mp3str"
+
+[deps]
+
+source_file="res://resources/audio/raining-ambient-calm-piano-music-loop-111521.mp3"
+dest_files=[ "res://.import/raining-ambient-calm-piano-music-loop-111521.mp3-7900e9d7349039138db73840754b8a54.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
