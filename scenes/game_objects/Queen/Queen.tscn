@@ -1,16 +1,65 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://scenes/game_objects/Queen/tile_0099.png" type="Texture" id=1]
+[ext_resource path="res://scenes/game_objects/Queen/FallQueen.png" type="Texture" id=1]
 [ext_resource path="res://scenes/game_objects/Spring/Spring.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/game_objects/Queen/Queen.gd" type="Script" id=3]
 
 [sub_resource type="PhysicsMaterial" id=3]
 rough = true
 
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Visuals/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "compress"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Visuals/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 4, 3 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Visuals/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
 [sub_resource type="CapsuleShape2D" id=4]
+radius = 7.0
+height = 28.0395
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 6.0
+radius = 4.0
 
 [node name="Queen" type="RigidBody2D"]
 collision_mask = 2
@@ -21,18 +70,26 @@ contacts_reported = 1
 script = ExtResource( 3 )
 spring_power = 80.0
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 5 )
+anims/compress = SubResource( 6 )
+anims/default = SubResource( 7 )
+
 [node name="Spring" parent="." instance=ExtResource( 2 )]
 move_node_path = NodePath("../Visuals")
 
 [node name="Visuals" type="Node2D" parent="."]
-position = Vector2( 0, -31 )
+position = Vector2( 0, -32 )
 
 [node name="Sprite" type="Sprite" parent="Visuals"]
-scale = Vector2( 2, 2 )
+position = Vector2( 0, 16 )
 texture = ExtResource( 1 )
+offset = Vector2( 0, -16 )
+hframes = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -19 )
+position = Vector2( 0, -17 )
+scale = Vector2( 0.98054, 1.09421 )
 shape = SubResource( 4 )
 
 [node name="GameOverArea" type="Area2D" parent="."]

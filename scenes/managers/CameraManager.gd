@@ -15,6 +15,12 @@ func _ready():
 
 
 func _process(delta):
+	if not is_instance_valid(control_camera) or not is_instance_valid(follow_node):
+		return
 	control_camera.global_position = control_camera.global_position.linear_interpolate(
 			Vector2(control_camera.global_position.x, follow_node.global_position.y + 50),
 			1 - exp(-delta * 1.3))
+	if abs(control_camera.global_position.y - (follow_node.global_position.y + 50)) > 60:
+		control_camera.global_position = control_camera.global_position.linear_interpolate(
+			Vector2(control_camera.global_position.x, follow_node.global_position.y + 50),
+			1 - exp(-delta * 2.5))

@@ -6,7 +6,8 @@ export(NodePath) var world_node_path: NodePath
 onready var world_node = get_node(world_node_path)
 
 
-func restart_level(level_path: String):
+func load_level(level_path: String):
+	world_node.pause_mode = Node.PAUSE_MODE_STOP
 	if $AnimationPlayer.is_playing():
 		return
 	var level: Node = null
