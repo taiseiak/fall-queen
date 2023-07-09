@@ -33,4 +33,4 @@ func _on_animation_finished(anim_name: String, level: Node):
 	$AnimationPlayer.disconnect("animation_finished", self, "_on_animation_finished")
 	$AnimationPlayer.play_backwards("dissolve")
 	yield($AnimationPlayer, 'animation_finished')
-	world_node.pause_mode = Node.PAUSE_MODE_INHERIT
+	world_node.pause_mode = Node.PAUSE_MODE_STOP
